@@ -1,10 +1,11 @@
-# напиши модуль для реализации секундомера
 from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivy.properties import BooleanProperty
 
+
 class Seconds(Label):
-    done =  BooleanProperty(False)
+    done = BooleanProperty(False)
+
     def __init__(self, total, **kwargs):
         self.done = False
         self.total = total
