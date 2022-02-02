@@ -84,7 +84,7 @@ class PulseScr(Screen):
         line.add_widget(self.lbl_result)
         line.add_widget(self.in_result)
 
-        self.lbl_sec = Seconds(1)
+        self.lbl_sec = Seconds(15)
         self.lbl_sec.bind(done=self.sec_finished)
 
         self.btn = Button(text='Начать', size_hint=(0.3, 0.2), pos_hint={'center_x': 0.5})
@@ -123,7 +123,7 @@ class CheckSits(Screen):
         self.next_screen = False
 
         instr = Label(text=txt_test2, text_size=(Window.width - dp(200), Window.height - dp(15)), pos_hint={'center_y': .85})
-        self.lbl_sits = Sits(3)
+        self.lbl_sits = Sits(30)
         self.run = Runner(total=3, steptime=1.5, size_hint=(.4, 1))
         self.run.bind(finished=self.run_finished)
 
@@ -176,7 +176,7 @@ class PulseScr2(Screen):
         line2.add_widget(self.lbl_result2)
         line2.add_widget(self.in_result2)
 
-        self.lbl_sec = Seconds(3)
+        self.lbl_sec = Seconds(15)
         self.lbl_sec.bind(done=self.sec_finished)
 
         self.btn = Button(text='Начать', size_hint=(0.3, 0.2), pos_hint={'center_x': 0.5})
@@ -194,10 +194,10 @@ class PulseScr2(Screen):
     def sec_finished(self, *args):
         if self.lbl_sec.done:
             if self.stage == 1:
-                self.lbl_sec.restart(6)
+                self.lbl_sec.restart(30)
                 self.stage = 2
             elif self.stage == 2:
-                self.lbl_sec.restart(3)
+                self.lbl_sec.restart(15)
                 self.stage = 3
             elif self.stage == 3:
                 self.btn.text = "Завершить"
